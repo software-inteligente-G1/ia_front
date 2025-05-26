@@ -1,4 +1,4 @@
-import type {FieldConfig} from "../interfaces/field-config.constant.ts";
+import type {FieldConfig} from "../interfaces/field-config.interface.ts";
 
 export const fields: FieldConfig[] = [
     {
