@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import {type NaiveBayesRequest, predictNaiveBayes} from "../../services/naive-bayes.service.ts";
+import {predictNaiveBayes} from "../../services/naive-bayes.service.ts";
 import {FieldInput} from "../input/field-input.component.tsx";
 import {fields} from "../../constants/fields.constant.ts";
+import type {NaiveBayesRequest} from "../../interfaces/field-config.interface.ts";
 
 export default function NaiveBayesComponent() {
     const [formData, setFormData] = useState<NaiveBayesRequest>({

@@ -1,5 +1,5 @@
 import React from 'react';
-import type {FieldConfig} from "../../interfaces/field-config.constant.ts";
+import type {FieldConfig} from "../../interfaces/field-config.interface.ts";
 
 interface Props {
     field: FieldConfig;
