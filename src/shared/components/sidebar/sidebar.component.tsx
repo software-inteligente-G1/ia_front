@@ -65,6 +65,12 @@ export default function SideBarComponent() {
         >
           Procesamiento de Lenguaje Natural
         </MenuItem>
+        <MenuItem
+          active={location.pathname === '/image-processing'}
+          component={<Link to="/image-processing" />}
+        >
+          Clasificación de Imágenes
+        </MenuItem>
       </Menu>
     </Sidebar>
   );

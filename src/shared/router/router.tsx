@@ -6,6 +6,7 @@ import NeuralNetworksComponent from "../../pages/neural-networks/components/main
 import NlpComponent from '../../pages/nlp/components/main/nlp.component';
 import NotFoundComponent from "../components/not-found/not-found.component";
 import MainLayout from "../../layouts/main-layout/main.layout";
+import ImageProcessing from "../../pages/image-processing/components/main/image-processing.component";
 
 export const Router = () => {
   return (
@@ -17,6 +18,7 @@ export const Router = () => {
           <Route path="/naive-bayes" element={<NaiveBayesComponent />} />
           <Route path="/neural-networks" element={<NeuralNetworksComponent />} />
           <Route path="/nlp" element={<NlpComponent />} />
+          <Route path="/image-processing" element={<ImageProcessing />} />
         </Route>
         <Route path="*" element={<NotFoundComponent />} />
       </Routes>
