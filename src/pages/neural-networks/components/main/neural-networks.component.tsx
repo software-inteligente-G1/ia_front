@@ -35,22 +35,18 @@ export default function NeuralNetworksComponent() {
     };
 
     return (
-        <div className="max-w-4xl mx-auto my-8 px-4">
-            {/* Introductory section about Neural Networks */}
-            <section className="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h1 className="text-3xl font-bold mb-2">
-                    Predicción de Consumo Energético con Redes Neuronales
-                </h1>
-                <p className="text-gray-700 mb-4">
+        <div className="max-w-4xl mx-auto my-10 px-4">
+            <section className="card">
+                <h1 className="text-3xl font-bold mb-4 text-center">Predicción de Consumo Energético con Redes Neuronales</h1>
+                <p className="text-gray-700 mb-2 text-center">
                     Las redes neuronales son modelos computacionales inspirados en el funcionamiento del cerebro humano, diseñados para reconocer patrones complejos en grandes volúmenes de datos.
                 </p>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 mb-4 text-center">
                     En esta aplicación, utilizamos una red neuronal para predecir el consumo energético por hora (en kWh) de un hogar, en función del tipo de electrodoméstico, la hora del día, la estación del año, la temperatura exterior y el tamaño del hogar. Esto permite estimar el consumo diario, semanal y mensual, facilitando la planificación energética y promoviendo un uso más eficiente de los recursos.
                 </p>
             </section>
 
-            {/* Prediction Form */}
-            <div className="bg-white shadow rounded-lg p-6 mb-8">
+            <div className="card mb-8">
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label className="block text-sm font-medium">Hora del día (0-23)</label>
@@ -59,7 +55,6 @@ export default function NeuralNetworksComponent() {
                             name="time"
                             value={formData.time}
                             onChange={handleChange}
-                            className="w-full mt-1 px-3 py-2 border rounded-md"
                             min="0" max="23"
                             required
                         />
@@ -72,7 +67,6 @@ export default function NeuralNetworksComponent() {
                             name="temperature"
                             value={formData.temperature}
                             onChange={handleChange}
-                            className="w-full mt-1 px-3 py-2 border rounded-md"
                             required
                         />
                     </div>
@@ -84,7 +78,6 @@ export default function NeuralNetworksComponent() {
                             name="household_size"
                             value={formData.household_size}
                             onChange={handleChange}
-                            className="w-full mt-1 px-3 py-2 border rounded-md"
                             required
                         />
                     </div>
@@ -95,7 +88,6 @@ export default function NeuralNetworksComponent() {
                             name="appliance_type"
                             value={formData.appliance_type}
                             onChange={handleChange}
-                            className="w-full mt-1 px-3 py-2 border rounded-md"
                         >
                             {applianceLabels.map((label, idx) => (
                                 <option key={idx} value={idx}>{label}</option>
@@ -109,7 +101,6 @@ export default function NeuralNetworksComponent() {
                             name="season"
                             value={formData.season}
                             onChange={handleChange}
-                            className="w-full mt-1 px-3 py-2 border rounded-md"
                         >
                             {seasonLabels.map((label, idx) => (
                                 <option key={idx} value={idx}>{label}</option>
@@ -121,7 +112,7 @@ export default function NeuralNetworksComponent() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 disabled:opacity-50"
+                            className="btn"
                         >
                             {loading ? 'Calculando...' : 'Predecir'}
                         </button>
@@ -129,9 +120,8 @@ export default function NeuralNetworksComponent() {
                 </form>
             </div>
 
-            {/* Result */}
             {result && (
-                <div className="mb-6 p-4 rounded-lg bg-blue-50 border border-blue-200 text-blue-800">
+                <div className="success">
                     <h2 className="font-semibold mb-1">Resultado:</h2>
                     <p>⚡ <strong>Consumo estimado por hora:</strong> {result.predicted_kwh} kWh</p>
                     <p>📅 <strong>Consumo diario:</strong> {result.daily} kWh</p>
@@ -141,9 +131,8 @@ export default function NeuralNetworksComponent() {
                 </div>
             )}
 
-            {/* Error */}
             {error && (
-                <div className="bg-yellow-50 border-yellow-200 text-yellow-800 rounded-lg p-4">
+                <div className="error">
                     {error}
                 </div>
             )}

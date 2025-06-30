@@ -43,17 +43,15 @@ export default function NaiveBayesComponent() {
     };
 
     return (
-        <div className="max-w-4xl mx-auto my-8 px-4">
-            <section className="bg-white shadow-lg rounded-lg p-6 mb-8">
-                <h1 className="text-3xl font-bold mb-2">
-                    Predicción de Diabetes con Naive Bayes
-                </h1>
-                <p className="text-gray-700 mb-4">
+        <div className="max-w-4xl mx-auto my-10 px-4">
+            <section className="card">
+                <h1 className="text-3xl font-bold mb-4 text-center">Predicción de Diabetes con Naive Bayes</h1>
+                <p className="text-gray-700 mb-2 text-center">
                     Naive Bayes es un clasificador probabilístico basado en el Teorema de Bayes, que asume independencia entre las características. Aquí lo usamos para predecir la presencia de diabetes (1) o su ausencia (0) en pacientes a partir de variables como glucosa, IMC, edad, etc.
                 </p>
             </section>
 
-            <div className="bg-white shadow rounded-lg p-6 mb-8">
+            <div className="card mb-8">
                 <form
                     onSubmit={handleSubmit}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-6"
@@ -71,7 +69,7 @@ export default function NaiveBayesComponent() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 disabled:opacity-50"
+                            className="btn"
                         >
                             {loading ? 'Calculando...' : 'Predecir'}
                         </button>
@@ -81,11 +79,7 @@ export default function NaiveBayesComponent() {
 
             {prediction !== null && (
                 <div
-                    className={`mb-6 p-4 rounded-lg ${
-                        prediction === 1
-                            ? 'bg-red-50 border-red-200 text-red-800'
-                            : 'bg-green-50 border-green-200 text-green-800'
-                    } border`}
+                    className={`success`}
                 >
                     <h2 className="font-semibold mb-1">Resultado:</h2>
                     <p>
@@ -97,7 +91,7 @@ export default function NaiveBayesComponent() {
             )}
 
             {error && (
-                <div className="bg-yellow-50 border-yellow-200 text-yellow-800 rounded-lg p-4">
+                <div className="error">
                     {error}
                 </div>
             )}

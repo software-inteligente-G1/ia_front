@@ -1,1 +1,173 @@
 @import "tailwindcss";
+
+/* Reset básico */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: #f6f8fa;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #1e40af;
+}
+
+/* Tarjetas */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(30,64,175,0.08), 0 1.5px 4px 0 rgba(30,64,175,0.04);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px 0 rgba(30,64,175,0.12), 0 2px 8px 0 rgba(30,64,175,0.06);
+}
+
+/* Botones */
+.btn {
+  background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(30,64,175,0.08);
+}
+.btn:hover {
+  background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
+  box-shadow: 0 4px 16px 0 rgba(30,64,175,0.12);
+}
+
+/* Inputs y selects */
+input, select, textarea {
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  background: #fff;
+}
+
+/* Secciones y espaciados */
+section {
+  margin-bottom: 2.5rem;
+}
+
+label {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* Feedback visual */
+.success {
+  background: #e6f9ed;
+  color: #15803d;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1.5px solid #fecaca;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsividad básica */
+@media (max-width: 900px) {
+  .card {
+    padding: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Sidebar: fondo azul sólido, sin scroll, alto fijo y flex */
+.pro-sidebar, .pro-sidebar-inner, .pro-sidebar-layout, .pro-sidebar-content {
+  background: #2563eb !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.pro-sidebar::-webkit-scrollbar,
+.pro-sidebar-inner::-webkit-scrollbar,
+.pro-sidebar-layout::-webkit-scrollbar,
+.pro-sidebar-content::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Footer moderno */
+footer, .footer {
+  background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%) !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  border-top: none !important;
+  padding: 0.9rem 0 !important;
+  margin-top: 1.5rem !important;
+  text-align: center !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1px !important;
+  box-shadow: 0 -2px 12px 0 rgba(30,64,175,0.10) !important;
+}
+
+/* Sidebar personalizado: fondo azul oscuro y sin scroll SOLO al contenedor principal */
+.custom-sidebar, .custom-sidebar-menu {
+  background: #1e3a8a !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  scrollbar-width: none !important; /* Firefox */
+}
+.custom-sidebar-menu::-webkit-scrollbar,
+.custom-sidebar::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Edge */
+}
+
+/* Oculta la barra de scroll en todos los posibles contenedores del sidebar */
+.pro-sidebar,
+.pro-sidebar-inner,
+.pro-sidebar-layout,
+.pro-sidebar-content,
+.custom-sidebar,
+.custom-sidebar-menu {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+
+.pro-sidebar::-webkit-scrollbar,
+.pro-sidebar-inner::-webkit-scrollbar,
+.pro-sidebar-layout::-webkit-scrollbar,
+.pro-sidebar-content::-webkit-scrollbar,
+.custom-sidebar::-webkit-scrollbar,
+.custom-sidebar-menu::-webkit-scrollbar {
+  display: none !important;
+}
