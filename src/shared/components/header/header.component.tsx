@@ -12,7 +12,7 @@ export default function HeaderComponent() {
       }}
     >
       <h1 style={{ fontWeight: 800, fontSize: '2.1rem', letterSpacing: '0.5px', margin: 0, color: '#fff', textShadow: '0 2px 8px rgba(30,64,175,0.18)' }}>
-        Sistema Inteligente de Apoyo Híbrido (SIAH) - Grupo 4
+        Sistema Inteligente de Apoyo Híbrido (SIAH) - Grupo 1
       </h1>
     </header>
   );
