@@ -40,6 +40,12 @@ export default function SideBarComponent() {
         >
           Redes Neuronales
         </MenuItem>
+        <MenuItem
+          active={location.pathname === '/nlp'}
+          component={<Link to="/nlp" />}
+        >
+          Procesamiento de Lenguaje Natural
+        </MenuItem>
       </Menu>
     </Sidebar>
   );
